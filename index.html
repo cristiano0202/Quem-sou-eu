@@ -1,83 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem Sou Eu Além da Profissão</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quem Sou Eu Além da Profissão</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <header class="bg-gray-800 text-white text-center py-4">
-        <h1 class="text-2xl font-semibold">Quem Sou Eu Além da Profissão</h1>
-    </header>
+  <!-- Cabeçalho -->
+  <header class="bg-gray-800 text-white text-center py-6">
+    <h1 class="text-3xl font-bold">Um prazer te conhecer</h1>
+    <p class="text-lg mt-2">Conheça um pouco mais sobre minha trajetória</p>
+  </header>
 
-    <nav class="bg-gray-700 text-white text-center py-3">
-        <a href="#" class="mx-4 hover:underline">Início</a>
-        <a href="#" class="mx-4 hover:underline">Sobre</a>
-        <a href="#" class="mx-4 hover:underline">Contato</a>
-    </nav>
+  <!-- Navegação -->
+  <nav class="bg-gray-700 text-white text-center py-4">
+    <a href="#sobre" class="mx-4 hover:underline">Sobre Mim</a>
+    <a href="#experiencia" class="mx-4 hover:underline">Experiência</a>
+    <a href="#projetos" class="mx-4 hover:underline">Projetos</a>
+  </nav>
 
-    <section class="max-w-4xl mx-auto bg-white mt-6 p-6 shadow-lg rounded-lg">
-        <h2 class="text-xl font-bold mb-4">Minha História</h2>
-        <p class="text-justify">Aqui você pode escrever sobre quem você é além da sua profissão. Fale sobre seus hobbies, valores, experiências pessoais e o que te faz ser único.</p>
-    </section>
-
-    <div class="container flex flex-wrap justify-center mt-6">
-        <div class="m-4 w-72 text-center">
-            <img src="sua-imagem1.jpg" alt="Imagem 1" class="rounded-lg">
-            <p class="mt-2">Descrição da imagem 1</p>
-        </div>
-        <div class="m-4 w-72 text-center">
-            <img src="sua-imagem2.jpg" alt="Imagem 2" class="rounded-lg">
-            <p class="mt-2">Descrição da imagem 2</p>
-        </div>
+  <!-- Seção Sobre -->
+  <section id="sobre" class="max-w-4xl mx-auto bg-white mt-8 p-6 shadow-lg rounded-lg">
+    <h2 class="text-2xl font-semibold mb-4">Prazer, sou Cristiano</h2>
+    <div class="flex flex-col md:flex-row items-center gap-6">
+      <div class="w-60">
+        <img src="WhatsApp Image 2025-03-06 at 21.00.51.jpeg" alt="Minha foto" class="rounded-lg shadow-md">
+      </div>
+      <div>
+        <p class="text-justify">
+          Sou um eletricista com formação técnica em Eletrotécnica. Tenho 22 anos e estou sempre em busca de novos conhecimentos e experiências que contribuam para meu crescimento pessoal e profissional.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <footer class="bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full">
-        <p>&copy; 2025 - Seu Nome</p>
-    </footer>
+  <!-- Seção Experiência -->
+  <section id="experiencia" class="max-w-4xl mx-auto bg-white mt-8 p-6 shadow-lg rounded-lg">
+    <h2 class="text-2xl font-semibold mb-4">Experiência Profissional</h2>
+    <ul class="list-disc pl-5 space-y-2">
+      <li>Formação Técnica em Eletrotécnica</li>
+      <li>Experiência em manutenção elétrica e instalações residenciais e comerciais</li>
+      <li>Projetos de eficiência energética</li>
+    </ul>
+  </section>
+
+  <!-- Seção Projetos -->
+  <section id="projetos" class="max-w-4xl mx-auto bg-white mt-8 p-6 shadow-lg rounded-lg mb-20">
+    <h2 class="text-2xl font-semibold mb-4">Projetos Realizados</h2>
+    <ul class="list-disc pl-5 space-y-2">
+      <li>Instalação elétrica em uma nova residência</li>
+      <li>Manutenção de sistemas elétricos em empresas locais</li>
+      <li>Desenvolvimento de soluções para economia de energia em pequenas indústrias</li>
+    </ul>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full">
+    <p>&copy; 2025 - Cristiano</p>
+  </footer>
 
 </body>
-    <header>
-        <h1>Um prazer te conhece</h1>
-        <p>Conheça um pouco mais sobre minha trajetória</p>
-    </header>
-    <nav>
-        <a href="#sobre">Sobre Mim</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#projetos">Projetos</a>
-    </nav>
-
-    <section id="sobre">
-        <h2>prazer sou cristiano</h2>
-        <div class="container">
-            <div>
-                <img src="WhatsApp Image 2025-03-06 at 21.00.51.jpeg" alt="Minha foto">
-            </div>
-            <div>
-                <p> Sou um eletricista com formação técnica em Eletrotécnica.
-                     tenho 22 anos  
-                     
-        </div>
-    </section>
-
-    <section id="experiencia">
-        <h2>Experiência Profissional</h2>
-        <ul>
-            <li>Formação Técnica em Eletrotécnica</li>
-            <li>Experiência em manutenção elétrica e instalações residenciais e comerciais</li>
-            <li>Projetos de  eficiência energética</li>
-        </ul>
-    </section>
-
-    <section id="projetos">
-        <h2>Projetos Realizados</h2>
-        <ul>
-            <li>Instalação elétrica em uma nova residência</li>
-            <li>Manutenção de sistemas elétricos em empresas locais</li>
-            <li>Desenvolvimento de soluções para economia de energia em pequenas indústrias</li>
-        </ul>
-    </section>
-
-    
+</html>
