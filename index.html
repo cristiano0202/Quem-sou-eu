@@ -1,244 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Site pessoal de Cristiano: eletricista, técnico em eletrotécnica . Conheça meus serviços, projetos e entre em contato.">
-  <title>Quem Sou Eu Além da Profissão</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1s ease-out;
-    }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .lightbox-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 50;
-    }
-    .lightbox-overlay img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgb(78, 255, 8);
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      color: #070000da;
-      font-size: 2.5rem;
-      font-weight: bold;
-      cursor: pointer;
-      user-select: none;
-      z-index: 51;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Site pessoal de Cristiano, eletricista e técnico em eletrotécnica. Serviços, projetos e contato.">
+<title>Quem Sou Eu Além da Profissão</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+html { scroll-behavior: smooth; }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgb(78,255,8);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- Player de Música Preferida -->
-  <audio id="player-musica" controls preload="none" class="fixed bottom-4 left-4 w-64 rounded shadow-lg bg-white z-50">
-    <source src="Imagine Dragons - Believer.mp3" type="audio/mpeg" />
-    Seu navegador não suporta áudio.
-  </audio>
+<!-- Player de Música -->
+<audio id="player-musica" controls preload="none"
+class="fixed bottom-4 left-4 w-64 rounded shadow-lg bg-white z-50 hidden">
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
-  <!-- CAPA DE ABERTURA -->
-  <div id="capa-inicial" 
-       class="fixed inset-0 bg-cover bg-center z-[9999] flex flex-col items-center justify-center text-white text-center transition-opacity duration-1000" 
-       style="background-image: url('Imagem/capa.jpg');">
-    <div class="bg-black bg-opacity-80 p-8 rounded-xl max-w-lg mx-4">
-      <h1 id="typed-text" class="text-4xl sm:text-5xl font-bold mb-4"></h1>
-      <p class="text-lg sm:text-xl mb-6">Sou Cristiano — Eletricista e Técnico em Eletrotécnica</p>
-      <button id="entrar-btn" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition duration-300">Entrar</button>
-    </div>
-  </div>
+<!-- CAPA -->
+<div id="capa-inicial"
+class="fixed inset-0 bg-cover bg-center z-[9999] flex items-center justify-center transition-opacity duration-1000"
+style="background-image:url('img/capa.jpg');">
 
-  <script>
-    // Texto sendo digitado
-    const texto = "Bem-vindo ao meu site!";
-    const elemento = document.getElementById("typed-text");
-    let index = 0;
+<div class="bg-black bg-opacity-80 p-8 rounded-xl text-center text-white max-w-md">
+<h1 id="typed-text" class="text-4xl font-bold mb-4"></h1>
+<p class="mb-6">Sou Cristiano — Eletricista e Técnico em Eletrotécnica</p>
+<button id="entrar-btn" class="bg-yellow-400 px-6 py-3 rounded-full text-black font-bold hover:bg-yellow-300">
+Entrar
+</button>
+</div>
+</div>
 
-    function digitar() {
-      if (index < texto.length) {
-        elemento.innerHTML += texto.charAt(index);
-        index++;
-        setTimeout(digitar, 100);
-      }
-    }
+<header class="bg-indigo-700 text-white text-center py-8">
+<h1 class="text-4xl font-bold">Um prazer te conhecer</h1>
+<p>Conheça minha trajetória</p>
+</header>
 
-    digitar();
+<nav class="bg-indigo-600 text-white text-center py-3 space-x-6">
+<a href="#sobre">Sobre</a>
+<a href="#experiencia">Experiência</a>
+<a href="#projetos">Projetos</a>
+</nav>
 
-    // Esconde a capa e toca música
-    const entrarBtn = document.getElementById('entrar-btn');
-    const capa = document.getElementById('capa-inicial');
-    const musica = document.getElementById('bg-music');
-
-    entrarBtn.addEventListener('click', () => {
-      capa.classList.add('opacity-0');
-      setTimeout(() => {
-        capa.style.display = 'none';
-      }, 1000);
-
-      musica.volume = 0.4;
-      musica.play();
-    });
-  </script>
-
-  <!-- Cabeçalho -->
-  <header class="bg-indigo-700 text-white text-center py-8 shadow-md">
-    <h1 class="text-4xl font-bold">Um prazer te conhecer</h1>
-    <p class="text-xl mt-2">Conheça um pouco mais sobre minha trajetória</p>
-  </header>
-
-  <!-- Imagem de Apresentação -->
-<section class="max-w-4xl mx-auto px-4 py-12 fade-in flex flex-col items-center">
-  <img src="img20240622193819028.jpg" alt="Cristiano apresentando" class="rounded-lg shadow-lg mb-6 max-h-80 object-cover">
-  <h2 class="text-3xl font-bold text-indigo-700">Olá! Seja bem-vindo ao meu espaço online</h2>
-  <p class="mt-2 text-gray-700 text-center max-w-xl">
-    Aqui compartilho minha trajetória, projetos e serviços como eletricista e técnico em eletrotécnica.
-  </p>
+<section id="sobre" class="max-w-4xl mx-auto p-8 fade-in">
+<h2 class="text-3xl font-bold text-indigo-700 mb-4">Sobre mim</h2>
+<p>Sou Cristiano, eletricista e técnico em eletrotécnica, atuando com instalações, manutenção e automação elétrica.</p>
 </section>
 
-  <!-- Navegação -->
-  <nav class="bg-indigo-600 text-white text-center py-3 flex justify-center space-x-6 text-sm sm:text-base">
-    <a href="#sobre" class="hover:underline hover:text-yellow-300 transition">Sobre</a>
-    <a href="#experiencia" class="hover:underline hover:text-yellow-300 transition">Experiência</a>
-    <a href="#projetos" class="hover:underline hover:text-yellow-300 transition">Projetos</a>
-    <a href="#contato" class="hover:underline hover:text-yellow-300 transition">Contato</a>
-  </nav>
+<section id="experiencia" class="max-w-4xl mx-auto p-8 bg-white rounded shadow fade-in">
+<ul class="list-disc list-inside">
+<li>Eletricista residencial e comercial</li>
+<li>Técnico em eletrotécnica industrial</li>
+<li>Projetos de eficiência energética</li>
+</ul>
+</section>
 
-  <!-- Seção Sobre -->
-  <section id="sobre" class="max-w-4xl mx-auto px-4 py-16 fade-in">
-    <h2 class="text-3xl font-bold mb-6 text-indigo-700">Sobre Mim</h2>
-    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-      Olá! Sou Cristiano, eletricista e técnico em eletrotécnica com vários anos de experiência na área. 
-      Trabalhar com instalações elétricas residenciais, comerciais e industriais, sempre prezando pela segurança, qualidade e eficiência.
-    </p>
-    <p class="text-lg leading-relaxed text-gray-700">
-      Além do trabalho técnico, gosto de aprender constantemente novas tecnologias e aprimorar minhas habilidades para oferecer o melhor serviço aos meus clientes.
-    </p>
-  </section>
+<section id="projetos" class="max-w-4xl mx-auto p-8 fade-in grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-  <!-- Seção Experiência -->
-  <section id="experiencia" class="max-w-4xl mx-auto px-4 py-16 bg-white rounded-lg shadow-md fade-in">
-    <h2 class="text-3xl font-bold mb-6 text-indigo-700">Experiência Profissional</h2>
-    <ul class="list-disc list-inside text-gray-700 space-y-3 text-lg">
-      <li><strong>Eletricista Autônomo</strong>  — Atuo em projetos residenciais e comerciais, realizando instalações, manutenções e diagnósticos elétricos.</li>
-      <li><strong>Técnico em Eletrotécnica</strong> — Trabalhei em empresa especializada em manutenção industrial, onde participei da automação e reparos de equipamentos elétricos.</li>
-      <li><strong>Projetos de Eficiência Energética</strong> — Desenvolvi soluções para redução do consumo energético, auxiliando clientes a economizar e tornar suas instalações mais sustentáveis.</li>
-    </ul>
-  </section>
-
-  <!-- Seção Projetos -->
-  <section id="projetos" class="max-w-4xl mx-auto px-4 py-16 fade-in">
-    <h2 class="text-3xl font-bold mb-6 text-indigo-700">Projetos Recentes</h2>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-semibold mb-2">Instalação Elétrica Residencial</h3>
-        <p class="text-gray-700 mb-4">Projeto completo de instalação elétrica em residência, com atenção especial à segurança e normas técnicas.</p>
-        <a href="trabalho/IMG-20250707-WA0037.jpeg" class="lightbox text-indigo-600 hover:underline">Ver imagem</a>
-      </div>
-      <div id="imagemBox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center">
-  <img src="recidecial.jpg" class="max-w-[90%] max-h-[90%] rounded-lg">
+<div class="bg-white p-4 rounded shadow">
+<p>Instalação Residencial</p>
+<a href="trabalho/1.jpg" class="lightbox text-indigo-600">Ver imagem</a>
 </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-semibold mb-2">Automação Industrial</h3>
-        <p class="text-gray-700 mb-4">Implementação de sistema automatizado para controle de máquinas, otimizando processos produtivos.</p>
-        <a href="trabalho/IMG-20250707-WA0038.jpeg" class="lightbox text-indigo-600 hover:underline">Ver imagem</a>
-      </div>
 
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-semibold mb-2">Eficiência Energética em Comércio</h3>
-        <p class="text-gray-700 mb-4">Consultoria e implantação de soluções para redução do consumo energético em loja comercial.</p>
-        <a href="trabalho/IMG_20240628_093150567_HDR.jpg" class="lightbox text-indigo-600 hover:underline">Ver imagem</a>
-      </div>
+<div class="bg-white p-4 rounded shadow">
+<p>Automação Industrial</p>
+<a href="trabalho/2.jpg" class="lightbox text-indigo-600">Ver imagem</a>
+</div>
 
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-semibold mb-2">Manutenção Elétrica Preventiva</h3>
-        <p class="text-gray-700 mb-4">Serviço de manutenção preventiva para garantir o bom funcionamento e evitar falhas em instalações.</p>
-        <a href="trabalho/IMG_20250115_140556050_AE.jpg" class="lightbox text-indigo-600 hover:underline">Ver imagem</a>
-      </div>
-    </div>
-  </section>
+</section>
 
-  
-  <!-- Botão Voltar ao Topo -->
-  <a href="#" aria-label="Voltar ao topo" class="fixed right-4 bottom-4 h-10 w-10 rounded-full bg-indigo-500 text-white text-2xl text-center leading-10 shadow-lg hover:bg-indigo-700 transition">↑</a>
+<footer class="bg-indigo-800 text-white text-center py-4">
+© 2025 Cristiano
+</footer>
 
-  <!-- Rodapé -->
-  <footer class="bg-indigo-800 text-white text-center py-4">
-    <p>&copy; 2025 - Cristiano</p>
-    <div class="mt-2 text-gray-300 text-sm">
-      <a href="#" class="mx-2 hover:text-white">Política de Privacidade</a> |
-      <a href="#" class="mx-2 hover:text-white">Termos de Uso</a> |
-      <a href="#contato" class="mx-2 hover:text-white">Contato</a>
-    </div>
-  </footer>
+<script>
+// TEXTO DIGITADO
+const texto = "Bem-vindo ao meu site!";
+const el = document.getElementById("typed-text");
+let i = 0;
+el.innerHTML = "";
 
-  <!-- Script: Efeito Fade-in -->
-  <script>
-    const observers = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.1 });
-    observers.forEach(el => observer.observe(el));
-  </script>
+function digitar(){
+  if(i < texto.length){
+    el.innerHTML += texto.charAt(i);
+    i++;
+    setTimeout(digitar, 80);
+  }
+}
+digitar();
 
-  <!-- Script Lightbox -->
-  <script>
-    document.querySelectorAll('.lightbox').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
+// CAPA
+const btn = document.getElementById("entrar-btn");
+const capa = document.getElementById("capa-inicial");
+const musica = document.getElementById("player-musica");
 
-        const overlay = document.createElement('div');
-        overlay.className = 'lightbox-overlay';
+btn.addEventListener("click", ()=>{
+  capa.classList.add("opacity-0");
+  setTimeout(()=>capa.style.display="none",1000);
+  musica.classList.remove("hidden");
+  musica.volume = 0.4;
+  musica.play();
+});
 
-        const img = document.createElement('img');
-        img.src = this.href;
-        img.alt = '';
+// FADE
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("show");
+  });
+});
+document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 
-        const closeBtn = document.createElement('span');
-        closeBtn.className = 'lightbox-close';
-        closeBtn.innerHTML = '&times;';
-
-        closeBtn.addEventListener('click', () => {
-          overlay.remove();
-        });
-
-        overlay.appendChild(img);
-        overlay.appendChild(closeBtn);
-        document.body.appendChild(overlay);
-
-        // Fechar ao clicar fora da imagem
-        overlay.addEventListener('click', e => {
-          if (e.target === overlay) overlay.remove();
-        });
-      });
-    });
-  </script>
+// LIGHTBOX
+document.querySelectorAll(".lightbox").forEach(link=>{
+  link.onclick = e=>{
+    e.preventDefault();
+    const overlay = document.createElement("div");
+    overlay.className="lightbox-overlay";
+    const img = document.createElement("img");
+    img.src = link.href;
+    const close = document.createElement("span");
+    close.innerHTML="&times;";
+    close.className="lightbox-close";
+    close.onclick=()=>overlay.remove();
+    overlay.append(img,close);
+    overlay.onclick=e=>{ if(e.target===overlay) overlay.remove(); };
+    document.body.appendChild(overlay);
+  };
+});
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
