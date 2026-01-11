@@ -3,170 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Site pessoal de Cristiano, eletricista e técnico em eletrotécnica. Serviços, projetos e contato.">
-<title>Quem Sou Eu Além da Profissão</title>
+<meta name="description" content="Cristiano eletricista em Araxá MG. Instalações elétricas, automação, manutenção e eficiência energética.">
+<title>Cristiano | Eletricista Profissional</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-html { scroll-behavior: smooth; }
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease-out;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
-}
-.lightbox-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgb(78,255,8);
-}
-.lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 2.5rem;
-  color: white;
-  cursor: pointer;
-}
+html{scroll-behavior:smooth}
+.fade-in{opacity:0;transform:translateY(20px);transition:all 1s ease}
+.fade-in.show{opacity:1;transform:translateY(0)}
+.lightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:50}
+.lightbox-overlay img{max-width:90%;max-height:90%;border-radius:12px;box-shadow:0 0 30px rgb(78,255,8)}
+.lightbox-close{position:absolute;top:1rem;right:1.5rem;font-size:2.5rem;color:white;cursor:pointer}
 </style>
 </head>
 
 <body class="bg-slate-900 text-slate-100">
 
-<!-- Player de Música -->
-<audio id="player-musica" controls preload="none"
-class="fixed bottom-4 left-4 w-64 rounded shadow-lg bg-white z-50 hidden">
-  <source src="musica.mp3" type="audio/mpeg">
+<!-- Música -->
+<audio id="player-musica" controls preload="none" class="fixed bottom-4 left-4 w-64 rounded bg-slate-800 shadow-lg z-50 hidden">
+<source src="musica.mp3" type="audio/mpeg">
 </audio>
 
+<!-- WhatsApp -->
+<a href="https://wa.me/5534999999999" target="_blank"
+class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-400 w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" class="w-8 h-8">
+<path d="M19.11 17.17c-.29-.15-1.7-.84-1.97-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.07-.29-.15-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.11-.23-.56-.46-.48-.64-.49l-.55-.01c-.19 0-.51.07-.78.36s-1.02 1-1.02 2.44 1.04 2.83 1.19 3.02c.15.19 2.05 3.13 4.97 4.39.7.3 1.25.48 1.67.62.7.22 1.34.19 1.85.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.36-.07-.11-.26-.18-.55-.33z"/>
+</svg>
+</a>
+
 <!-- CAPA -->
-<div id="capa-inicial"
-class="fixed inset-0 bg-cover bg-center z-[9999] flex items-center justify-center transition-opacity duration-1000"
+<div id="capa-inicial" class="fixed inset-0 bg-cover bg-center z-[9999] flex items-center justify-center transition-opacity duration-1000"
 style="background-image:url('img/capa.jpg');">
 
-<div class="bg-black bg-opacity-80 p-8 rounded-xl text-center text-white max-w-md">
+<div class="bg-black/70 backdrop-blur-md p-8 rounded-xl text-center max-w-md">
 <h1 id="typed-text" class="text-4xl font-bold mb-4"></h1>
-<p class="mb-6">Sou Cristiano — Eletricista e Técnico em Eletrotécnica</p>
-<button id="entrar-btn" class="bg-yellow-400 px-6 py-3 rounded-full text-black font-bold hover:bg-yellow-300">
+<p class="mb-6">Cristiano — Eletricista e Técnico em Eletrotécnica</p>
+<button id="entrar-btn" class="bg-yellow-400 px-6 py-3 rounded-full text-black font-bold hover:bg-yellow-300 transition">
 Entrar
 </button>
 </div>
 </div>
 
-<header class="bg-indigo-700 text-white text-center py-8">
-<h1 class="text-4xl font-bold">Um prazer te conhecer</h1>
-<p>Conheça minha trajetória</p>
+<header class="bg-indigo-700 text-white text-center py-8 shadow">
+<h1 class="text-4xl font-bold">Eletricista Profissional</h1>
+<p>Araxá MG e região</p>
 </header>
 
 <nav class="bg-indigo-600 text-white text-center py-3 space-x-6">
-<a href="#sobre">Sobre</a>
-<a href="#experiencia">Experiência</a>
-<a href="#projetos">Projetos</a>
+<a href="#sobre" class="hover:text-yellow-300">Sobre</a>
+<a href="#servicos" class="hover:text-yellow-300">Serviços</a>
+<a href="#projetos" class="hover:text-yellow-300">Trabalhos</a>
 </nav>
 
 <section id="sobre" class="max-w-4xl mx-auto p-8 fade-in">
-<h2 class="text-3xl font-bold text-indigo-700 mb-4">Sobre mim</h2>
-<p>Sou Cristiano, eletricista e técnico em eletrotécnica, atuando com instalações, manutenção e automação elétrica.</p>
+<h2 class="text-3xl font-bold text-indigo-400 mb-4">Sobre mim</h2>
+<p>Sou Cristiano, eletricista e técnico em eletrotécnica. Atuo com projetos elétricos, automação, manutenção e eficiência energética.</p>
 </section>
 
-<section id="experiencia" class="max-w-4xl mx-auto p-8 bg-white rounded shadow fade-in">
-<ul class="list-disc list-inside">
-<li>Eletricista residencial e comercial</li>
-<li>Técnico em eletrotécnica industrial</li>
-<li>Projetos de eficiência energética</li>
+<section id="servicos" class="max-w-4xl mx-auto p-8 bg-slate-800 rounded shadow fade-in">
+<ul class="list-disc list-inside space-y-2">
+<li>Instalações residenciais e comerciais</li>
+<li>Manutenção elétrica</li>
+<li>Automação industrial</li>
+<li>Painéis elétricos</li>
+<li>Eficiência energética</li>
 </ul>
 </section>
 
-<section id="projetos" class="max-w-4xl mx-auto p-8 fade-in grid grid-cols-1 sm:grid-cols-2 gap-6">
+<section id="projetos" class="max-w-6xl mx-auto p-8 fade-in">
+<h2 class="text-3xl font-bold text-indigo-400 mb-6">Meus Trabalhos</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
 
-<div class="bg-white p-4 rounded shadow">
-<p>Instalação Residencial</p>
-<a href="trabalho/1.jpg" class="lightbox text-indigo-600">Ver imagem</a>
+<a href="trabalho/1.jpg" class="lightbox"><img src="trabalho/1.jpg" class="rounded-lg shadow hover:scale-105 transition"></a>
+<a href="trabalho/2.jpg" class="lightbox"><img src="trabalho/2.jpg" class="rounded-lg shadow hover:scale-105 transition"></a>
+<a href="trabalho/3.jpg" class="lightbox"><img src="trabalho/3.jpg" class="rounded-lg shadow hover:scale-105 transition"></a>
+<a href="trabalho/4.jpg" class="lightbox"><img src="trabalho/4.jpg" class="rounded-lg shadow hover:scale-105 transition"></a>
+
 </div>
-
-<div class="bg-white p-4 rounded shadow">
-<p>Automação Industrial</p>
-<a href="trabalho/2.jpg" class="lightbox text-indigo-600">Ver imagem</a>
-</div>
-
 </section>
 
 <footer class="bg-indigo-800 text-white text-center py-4">
-© 2025 Cristiano
+© 2025 Cristiano — Araxá MG
 </footer>
 
 <script>
-// TEXTO DIGITADO
-const texto = "Bem-vindo ao meu site!";
-const el = document.getElementById("typed-text");
-let i = 0;
-el.innerHTML = "";
-
-function digitar(){
-  if(i < texto.length){
-    el.innerHTML += texto.charAt(i);
-    i++;
-    setTimeout(digitar, 80);
-  }
-}
+const texto="Bem-vindo ao meu site!";
+const el=document.getElementById("typed-text");
+let i=0;el.innerHTML="";
+function digitar(){if(i<texto.length){el.innerHTML+=texto.charAt(i);i++;setTimeout(digitar,80)}}
 digitar();
 
-// CAPA
-const btn = document.getElementById("entrar-btn");
-const capa = document.getElementById("capa-inicial");
-const musica = document.getElementById("player-musica");
+const btn=document.getElementById("entrar-btn");
+const capa=document.getElementById("capa-inicial");
+const musica=document.getElementById("player-musica");
+btn.onclick=()=>{capa.classList.add("opacity-0");setTimeout(()=>capa.style.display="none",1000);musica.classList.remove("hidden");musica.volume=0.4;musica.play()};
 
-btn.addEventListener("click", ()=>{
-  capa.classList.add("opacity-0");
-  setTimeout(()=>capa.style.display="none",1000);
-  musica.classList.remove("hidden");
-  musica.volume = 0.4;
-  musica.play();
-});
-
-// FADE
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add("show");
-  });
-});
+const observer=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")})});
 document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 
-// LIGHTBOX
 document.querySelectorAll(".lightbox").forEach(link=>{
-  link.onclick = e=>{
-    e.preventDefault();
-    const overlay = document.createElement("div");
-    overlay.className="lightbox-overlay";
-    const img = document.createElement("img");
-    img.src = link.href;
-    const close = document.createElement("span");
-    close.innerHTML="&times;";
-    close.className="lightbox-close";
-    close.onclick=()=>overlay.remove();
-    overlay.append(img,close);
-    overlay.onclick=e=>{ if(e.target===overlay) overlay.remove(); };
-    document.body.appendChild(overlay);
-  };
-});
+link.onclick=e=>{
+e.preventDefault();
+const o=document.createElement("div");
+o.className="lightbox-overlay";
+const img=document.createElement("img");
+img.src=link.href;
+const c=document.createElement("span");
+c.innerHTML="&times;";c.className="lightbox-close";
+c.onclick=()=>o.remove();
+o.append(img,c);
+o.onclick=e=>{if(e.target===o)o.remove()};
+document.body.appendChild(o);
+}});
 </script>
 
 </body>
 </html>
-
